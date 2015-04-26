@@ -7,3 +7,10 @@ class Book(models.Model):
 
     def __str__(self):
         return '{name} ({price})'.format(name=self.name, price=self.price)
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'price': '{:2f}'.format(self.price)
+            # TODO: Add URL
+        }
