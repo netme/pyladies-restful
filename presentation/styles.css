@@ -1,0 +1,80 @@
+@import url(http://fonts.googleapis.com/css?family=Cutive+Mono|Indie+Flower|Comfortaa:400,700);
+
+body {
+    font-size: 200%;
+    font-family: Comfortaa;
+}
+
+
+p {
+    font-size: 100%;
+    font-weight: normal;
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
+}
+
+em {
+    font-family: Comfortaa;
+}
+
+strong {
+    font-family: Comfortaa;
+    font-size: 127%;
+    letter-spacing: -2px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
+}
+
+h1 {
+    font-family: Indie Flower;
+    font-size: 180%;
+}
+
+table {
+    width: 100%;
+}
+
+table th {
+    background: #DDDDDD;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 0 15px;
+}
+
+
+#title-slide, #final-slide, #some-pictures {
+    background-size:700px;
+    background-repeat:no-repeat;
+    background-position:center;
+    height: 600px;
+}
+
+#title-slide h1, #some-pictures h1 {
+    line-height: 500px;
+    font-size: 300%;
+    text-align: center;
+}
+
+#final-slide h1 {
+    font-size: 250%;
+    width: 400px;
+    text-align: center;
+    margin: 150px auto 0 auto;
+}
+
+#title-slide p {
+    font-size: 60%;
+    text-align: right;
+    margin: -120px auto 0 auto;
+}
+
+#title-slide img {
+    margin-top: 20px;
+    float: right;
+}
