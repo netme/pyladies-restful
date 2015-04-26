@@ -27,6 +27,18 @@ class BookGetListTest(TestCase):
 
 
 class BookGetInstanceTest(TestCase):
+
     def test_wrong_id(self):
         response = self.client.get('/books/9999999999/')
         self.assertEqual(response.status_code, 404)
+
+    def test_returns_the_details(self):
+        book = Book(name='Django Book', price='29.90')
+        book.save()
+
+        response = self.client.get(reverse('book', kwargs={'id_': book.id}))
+
+        self.assertEqual(response.status_code, 200)
+        result = json.loads(response.content)
+        self.assertEqual(result['name'], book.name)
+        self.assertEqual(result['price'], book.price)
