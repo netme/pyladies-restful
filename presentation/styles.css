@@ -70,3 +70,7 @@ table th, table td {
     margin-right: 70px;
     float: right;
 }
+
+#status-codes-slide {
+    font-size: 0.8em;
+}

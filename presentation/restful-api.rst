@@ -34,7 +34,7 @@ http://en.wikipedia.org/wiki/Application_programming_interface
 REST
 ====
 
-**Representational State Transfer (REST)** is a software architecture style consisting of guidelines and best practices for creating scalable web services. REST is a coordinated set of constraints applied to the design of components in a distributed hypermedia system that can lead to a more performant and maintainable architecture.
+**Representational State Transfer (REST)** is a software architecture style consisting of guidelines and best practices for creating scalable web services.
 
 http://en.wikipedia.org/wiki/Representational_state_transfer
 
@@ -52,6 +52,41 @@ Web service APIs that adhere to the REST architectural constraints are called **
 * hypertext links to reference related resources
 
 http://en.wikipedia.org/wiki/Representational_state_transfer
+
+----
+
+Advantages :)
+=============
+
+* Uses the power of the HTTP protocol
+* API is cleaner and easier to understand
+* Maps perfectly to CRUD actions
+* Gives a lot of flexibility to the developer
+
+----
+
+Disadvantages :(
+================
+
+* Requires to follow some rules to keep the API clean
+* Not all actions easily map to CRUD
+* Not all the HTTP clients are supporting the required HTTP methods (e.g. PATCH)
+
+----
+
+Disadvantages :(
+================
+
+.. code:: http
+
+    PUT /books/123/ HTTP/1.1
+    Host: example.com
+    Authentication: MySuperSecureAPIKey
+
+    {
+        'method': 'PATCH',
+        ...
+    }
 
 ----
 
@@ -266,11 +301,14 @@ Usage: Send some data to the API.
 
 ----
 
+:id: status-codes-slide
+
+
 HTTP Status codes
 =================
 
 ========================= ==================
-Status Code               When should be used
+Status Code               When to use
 ========================= ==================
 200 OK                    Successful GET request
 201 Created               Successful POST request
