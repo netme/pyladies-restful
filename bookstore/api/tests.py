@@ -58,3 +58,18 @@ class BookModelTest(TestCase):
     def test_url_property_of_non_saved_object(self):
         book = Book(name='Django Book', price=Decimal('29.90'))
         self.assertIsNone(book.url)
+
+
+class BookPostTest(TestCase):
+    def test_create(self):
+        data = json.dumps({
+            'name': 'Kochbuch',
+            'price': '9.90'
+        })
+        response = self.client.post(
+            '/books/', content_type='application/json', data=data)
+
+        self.assertEqual(response.status_code, 201)
+        result = json.loads(response.content)
+        self.assertIn('id', result)
+        self.assertIn('url', result)
