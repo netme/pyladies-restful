@@ -338,13 +338,13 @@ REST Clients
 Let's Practice
 ==============
 
-.. todo: Add link to the github
+GitHub: netme/pyladies-restful
+
 
 ----
 
 Links
 =====
 
-.. todo
-
-
+* http://www.restapitutorial.com/
+* http://github.com/netme/pyladies-restful
