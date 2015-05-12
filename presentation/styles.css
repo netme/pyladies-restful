@@ -1,8 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Cutive+Mono|Indie+Flower|Comfortaa:400,700);
 
 body {
-    font-size: 200%;
+    font-size: 170%;
     font-family: Comfortaa;
+    line-height: 1.5em;
 }
 
 
@@ -13,19 +14,9 @@ p {
     margin-top: 0.3em;
 }
 
-em {
-    font-family: Comfortaa;
-}
-
-strong {
-    font-family: Comfortaa;
-    font-size: 127%;
-    letter-spacing: -2px;
-}
-
 h1, h2, h3, h4 {
     font-weight: bold;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     margin-top: 0.3em;
 }
 
@@ -75,6 +66,7 @@ table th, table td {
 }
 
 #title-slide img {
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-right: 70px;
     float: right;
 }
