@@ -30,3 +30,11 @@ class BookView(View):
         book = get_object_or_404(Book, pk=id_)
         json_data = json.dumps(book.to_dict())
         return HttpResponse(json_data)
+
+    def put(self, request, id_, *args, **kwargs):
+        book = get_object_or_404(Book, pk=id_)
+        data = json.loads(request.body)
+        book.name = data['name']
+        book.price = data['price']
+        book.save()
+        return HttpResponse('', status=204)

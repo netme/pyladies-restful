@@ -73,3 +73,28 @@ class BookPostTest(TestCase):
         result = json.loads(response.content)
         self.assertIn('id', result)
         self.assertIn('url', result)
+
+
+class BookPutTest(TestCase):
+    def test_update(self):
+        book = Book(name='Django Book', price=Decimal('29.90'))
+        book.save()
+
+        # PUT
+        data = {
+            'name': 'Kochbuch',
+            'price': '9.90'
+        }
+        json_data = json.dumps(data)
+        url = '/books/{}/'.format(book.id)
+        response = self.client.put(
+            url, content_type='application/json', data=json_data)
+
+        self.assertEqual(response.status_code, 204)
+
+        # GET
+        response = self.client.get(url)
+        result = json.loads(response.content)
+        self.assertEqual(result['name'], data['name'])
+        self.assertEqual(result['price'], data['price'])
+        self.assertEqual(result['url'], url)
